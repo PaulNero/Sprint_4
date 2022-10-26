@@ -121,11 +121,20 @@ class OrderPage:
     def set_name_input(self, name):
         self.w_is_name().send_keys(name)
 
+    def get_name_input(self):
+        self.w_is_name().get_attribute('value')
+
     def set_surname_input(self, surname):
         self.w_is_surname().send_keys(surname)
 
+    def get_surname_input(self):
+        self.w_is_surname().get_value()
+
     def set_address_input(self, address):
         self.w_is_address().send_keys(address)
+
+    def get_address_input(self):
+        self.w_is_address().get_value()
 
     def click_subway_input(self):
         self.w_is_subway().click()

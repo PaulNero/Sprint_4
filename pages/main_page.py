@@ -37,35 +37,35 @@ class MainPage:
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.how_it_work_order_button))
 
-    def q_what_is_price(self):
+    def q1_what_is_price(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q1_what_is_the_price_button))
 
-    def q_several_scooters(self):
+    def q2_several_scooters(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q2_several_scooters_button))
 
-    def q_how_is_rental_time(self):
+    def q3_how_is_rental_time(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q3_how_is_rental_time_calculated_button))
 
-    def q_order_scooter_today(self):
+    def q4_order_scooter_today(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q4_order_scooter_today_button))
 
-    def q_extend_order(self):
+    def q5_extend_order(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q5_extend_order_button))
 
-    def q_chargers_with_scooter(self):
+    def q6_chargers_with_scooter(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q6_chargers_with_scooter_button))
 
-    def q_can_i_cancel_an_order(self):
+    def q7_can_i_cancel_an_order(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q7_can_i_cancel_an_order_button))
 
-    def q_live_outside_mkad(self):
+    def q8_live_outside_mkad(self):
         return WebDriverWait(self.driver, delay).until(
             EC.element_to_be_clickable(MainPageLocators.q8_live_outside_mkad_button))
 
@@ -90,28 +90,28 @@ class MainPage:
         self.how_it_work_order().click()
 
     def click_what_is_price_question(self):
-        self.q_what_is_price().click()
+        self.q1_what_is_price().click()
 
     def click_several_scooters_question(self):
-        self.q_several_scooters().click()
+        self.q2_several_scooters().click()
 
     def click_how_is_rental_time_question(self):
-        self.q_how_is_rental_time().click()
+        self.q3_how_is_rental_time().click()
 
     def click_order_scooter_today_question(self):
-        self.q_order_scooter_today().click()
+        self.q4_order_scooter_today().click()
 
     def click_extend_order_question(self):
-        self.q_extend_order().click()
+        self.q5_extend_order().click()
 
     def click_chargers_with_scooter_question(self):
-        self.q_chargers_with_scooter().click()
+        self.q6_chargers_with_scooter().click()
 
     def click_how_cancel_order_question(self):
-        self.q_can_i_cancel_an_order().click()
+        self.q7_can_i_cancel_an_order().click()
 
     def click_live_outside_mkad(self):
-        self.q_live_outside_mkad().click()
+        self.q8_live_outside_mkad().click()
 
 ##### ДЕЙСТВИЯ С НЕСКОЛЬКИМИ ЭЛЛЕМЕНТАМИ
 
@@ -120,14 +120,14 @@ class MainPage:
         self.click_header_order_button()
 
     def get_main_page_and_order_via_header_button(self):
-        self.driver.get(MainPageLocators.main_link)
+        # self.driver.get(MainPageLocators.main_link)
         self.click_header_order_button()
 
     def get_main_page_and_order_via_middle_button(self):
-        self.driver.get(MainPageLocators.main_link)
-        WebDriverWait(self.driver, delay).until(EC.url_to_be(MainPageLocators.main_link))
-        WebDriverWait(self.driver, delay).until(EC.
-                                                element_to_be_clickable(MainPageLocators.how_it_work_order_button))
+        # self.driver.get(MainPageLocators.main_link)
+        # WebDriverWait(self.driver, delay).until(EC.url_to_be(MainPageLocators.main_link))
+        # WebDriverWait(self.driver, delay).until(EC.
+        #                                         element_to_be_clickable(MainPageLocators.how_it_work_order_button))
         self.click_body_order_button()
 
     def open_yandex_logo_button(self):

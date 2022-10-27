@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class MainPageLocators:
     main_link = "https://qa-scooter.praktikum-services.ru/"
     dzen_link = "https://dzen.ru/?yredirect=true"
@@ -29,3 +30,4 @@ class MainPageLocators:
     a6_chargers_with_scooter_text = [By.XPATH, ".//p[contains(text(), 'Зарядка')]"]
     a7_can_i_cancel_an_order_text = [By.XPATH, ".//p[contains(text(), 'Штрафа')]"]
     a8_live_outside_mkad_text = [By.XPATH, ".//p[contains(text(), 'И Москве')]"]
+

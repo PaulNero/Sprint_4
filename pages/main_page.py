@@ -34,7 +34,7 @@ class MainPage:
             EC.element_to_be_clickable(MainPageLocators.header_order_status_button))
 
     def how_it_work_order(self):
-        return WebDriverWait(self.driver, delay).until(
+        return WebDriverWait(self.driver, 999).until(
             EC.element_to_be_clickable(MainPageLocators.how_it_work_order_button))
 
     def q1_what_is_price(self):
@@ -120,14 +120,9 @@ class MainPage:
         self.click_header_order_button()
 
     def get_main_page_and_order_via_header_button(self):
-        # self.driver.get(MainPageLocators.main_link)
         self.click_header_order_button()
 
     def get_main_page_and_order_via_middle_button(self):
-        # self.driver.get(MainPageLocators.main_link)
-        # WebDriverWait(self.driver, delay).until(EC.url_to_be(MainPageLocators.main_link))
-        # WebDriverWait(self.driver, delay).until(EC.
-        #                                         element_to_be_clickable(MainPageLocators.how_it_work_order_button))
         self.click_body_order_button()
 
     def open_yandex_logo_button(self):

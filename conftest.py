@@ -12,9 +12,8 @@ from pages.main_page import MainPage
 
 @pytest.fixture()
 def browser_setup():
-    time.sleep(10)
     option = webdriver.FirefoxOptions()
-    #option.add_argument('--headless')
+    option.add_argument('--headless')
     option.add_argument("--disable-notifications")
     option.add_argument("--enable-automation")
     option.add_argument("--disable-infobars")
@@ -24,7 +23,8 @@ def browser_setup():
     option.add_argument("--disable-dev-shm-usage")
     option.add_argument("--incognito")
 
-    driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=option)
+    # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=option)
+    driver = webdriver.Firefox(options=option)
     driver.set_window_size(1920, 1080)
     driver.get(MainPageLocators.main_link)
 

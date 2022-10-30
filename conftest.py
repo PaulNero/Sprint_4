@@ -1,5 +1,5 @@
-import time
 
+import time
 import pytest
 from locators.main_page_locators import *
 from selenium import webdriver
@@ -9,6 +9,18 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 
 from pages.main_page import MainPage
+
+@pytest.fixture(scope='function')
+def driver():
+    options = webdriver.FirefoxOptions()
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    driver.get(MainPageLocators.main_link)
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable(MainPageLocators.cookie_confirm_button)).click()
+    yield driver
+    driver.quit()
 
 @pytest.fixture()
 def browser_setup():
@@ -25,6 +37,7 @@ def browser_setup():
 
     # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=option)
     driver = webdriver.Firefox(options=option)
+
     driver.set_window_size(1920, 1080)
     driver.get(MainPageLocators.main_link)
 

@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class MainPageLocators:
     main_link = "https://qa-scooter.praktikum-services.ru/"
     dzen_link = "https://dzen.ru/?yredirect=true"
@@ -10,7 +11,7 @@ class MainPageLocators:
     header_order_button = [By.XPATH, ".//button[@class='Button_Button__ra12g' and text()='Заказать']"]
     header_order_status_button = [By.XPATH, ".//button[@class='Header_Link__1TAG7']"]
 
-    how_it_work_order_button = [By.XPATH, ".//button[contains(@class, 'Button_Middle') and (text()='Заказать')]"]
+    how_it_work_order_button = [By.XPATH, ".//div/div/div/div/div/div/button[text()='Заказать']"]
 
     q1_what_is_the_price_button = [By.XPATH, ".//div[text()='Сколько это стоит? И как оплатить?']"]
     q2_several_scooters_button = [By.XPATH, ".//div[text()='Хочу сразу несколько самокатов! Так можно?']"]
@@ -30,8 +31,3 @@ class MainPageLocators:
     a7_can_i_cancel_an_order_text = [By.XPATH, ".//p[contains(text(), 'Штрафа')]"]
     a8_live_outside_mkad_text = [By.XPATH, ".//p[contains(text(), 'И Москве')]"]
 
-class StatusPageLocators:
-    status_view_button = [By.XPATH, ".//button[text()='Посмотреть']"]
-    status_cancel_order_button = [By.XPATH, ".//button[text()='Отменить заказ']"]
-
-    status_input = [By.XPATH, ".//input[@class='Input_Input__1iN_Z Track_Input__1g7lq Input_Filled__1rDxs Input_Responsible__1jDKN']"]

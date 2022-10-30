@@ -1,3 +1,5 @@
+
+import time
 import pytest
 from locators.main_page_locators import *
 from selenium import webdriver
@@ -7,7 +9,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 
 from pages.main_page import MainPage
-
 
 @pytest.fixture(scope='function')
 def driver():
@@ -34,7 +35,9 @@ def browser_setup():
     option.add_argument("--disable-dev-shm-usage")
     option.add_argument("--incognito")
 
-    driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=option)
+    driver = webdriver.Firefox(options=option)
+
     driver.set_window_size(1920, 1080)
     driver.get(MainPageLocators.main_link)
 

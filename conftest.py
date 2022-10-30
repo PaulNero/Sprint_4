@@ -1,17 +1,11 @@
-import time
-
 import pytest
 from locators.main_page_locators import *
 from selenium import webdriver
-from webdriver_manager.firefox import GeckoDriverManager
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.chrome.options import Options
 
 from pages.main_page import MainPage
 
 @pytest.fixture()
-def browser_setup():
+def driver():
     option = webdriver.FirefoxOptions()
     option.add_argument('--headless')
     option.add_argument("--disable-notifications")
